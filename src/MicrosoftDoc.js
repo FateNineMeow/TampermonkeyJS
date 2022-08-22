@@ -10,16 +10,19 @@
 // ==/UserScript==
 
 (function () {
-    'use strict';
-    var url = window.location.pathname;
-    var urllan = url.substring(1, url.length);
-    console.log(urllan);
-    urllan = urllan.substring(0, urllan.indexOf('/'));
-    console.log(urllan);
-   var chlan="zh-cn";
-   if(urllan==chlan)
+  'use strict';
+  var url = window.location.pathname;
+  var urllan = url.substring(1, url.length);
+  // console.log(urllan);
+  // console.log(urllan.indexOf("/answers/") > 0);
+  if (urllan.indexOf("/answers/") > 0)
     return;
-  var  jumpurl= window.location.href.replace(urllan,chlan);
-   window.location.href=jumpurl;
-   console.log(jumpurl);
+  urllan = urllan.substring(0, urllan.indexOf('/'));
+  // console.log(urllan);
+  var chlan = "zh-cn";
+  if (urllan == chlan)
+    return;
+  var jumpurl = window.location.href.replace(urllan, chlan);
+  window.location.href = jumpurl;
+  console.log(jumpurl);
 })();
