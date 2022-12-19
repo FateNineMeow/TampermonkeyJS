@@ -5,6 +5,7 @@
 // @description  try to take over the world!
 // @author       You
 // @match        https://docs.microsoft.com/*
+// @match        https://learn.microsoft.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=microsoft.com
 // @grant        none
 // ==/UserScript==
