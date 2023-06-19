@@ -13,9 +13,11 @@
 (function() {
     'use strict';
     window.onload = (function() {
-        var as = document.querySelector("#post-241 > div > div.single-content > div.down-form > fieldset > span.down-form-inf > span.pass > span:nth-child(2)")
+        var as = document.querySelector("article > div > div.single-content > div.down-form > fieldset > span.down-form-inf > span.pass > span:nth-child(2)")
+        console.log(as);
         var text=as.innerHTML.replace("提取码：", "?pwd=").replace(" ", "");
-        var save=document.querySelector("#post-241 > div > div.single-content > div.down-form > fieldset > span.down-form-inf > span.pass > span:nth-child(3)")
+        console.log(as);
+        var save=document.querySelector("article > div > div.single-content > div.down-form > fieldset > span.down-form-inf > span.pass > span:nth-child(3)")
         save.innerHTML= "<a style='color:red' href='" + getUrl(text) + "'>下载</a>"
       // title.innerHTML = title.innerHTML + "<a style='color:red' href='" + url + "'>ÏÂÔØÁ´½Ó</a>"
     });
