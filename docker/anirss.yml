@@ -1,0 +1,15 @@
+services:
+  ani-rss:
+    image: "wushuo894/ani-rss:latest"
+    container_name: ani-rss
+    volumes:
+       - /var/apps/docker-anirss/shares/config:/config #配置文件目录，根据需要修改
+       - /vol3/1001/Download/AniRss:/Media #媒体文件目录，建议设置和qb一样
+    network_mode: bridge
+    ports:
+      - "7789:7789"
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
+      - CONFIG=/config
+      - PORT=7789

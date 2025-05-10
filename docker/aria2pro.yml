@@ -1,0 +1,20 @@
+version: '3.1' 
+services:
+    aria2-pro:
+        image: p3terx/aria2-pro
+        container_name: aria2-pro
+        restart: unless-stopped
+        ports:
+            - '6800:6800'
+            - '6888:6888'
+            - '6888:6888/udp'
+        volumes:
+            - /var/apps/docker-aria2-pro/shares/config:/config
+            - /vol3/1001/Download/Aria2:/downloads
+        environment:
+            - 'PUID=$UID'
+            - 'PGID=$GID'
+            - 'UMASK_SET=022'
+            - 'RPC_SECRET=nas'
+            - 'RPC_PORT=6800'
+            - 'LISTEN_PORT=6888'

@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+    alist:
+      image: 'xhofe/alist'
+      container_name: alist
+      restart: unless-stopped
+      volumes:
+          - /var/apps/docker-alist/shares/data:/opt/alist/data
+      ports:
+          - 5244:5244
+      environment:
+          - PUID=$UID
+          - PGID=$GID
+          - UMASK=022
